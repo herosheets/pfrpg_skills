@@ -16,7 +16,7 @@ class PfrpgSkills::Skill::Disguise
   end
 
   def to_s
-    Skill.stringify_skill("Disguise", attribute, ac_penalty?)
+    PfrpgSkills::Skill.stringify_skill("Disguise", attribute, ac_penalty?)
   end
 end
 

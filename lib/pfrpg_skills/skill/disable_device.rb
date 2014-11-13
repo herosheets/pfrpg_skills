@@ -16,7 +16,7 @@ class PfrpgSkills::Skill::DisableDevice
   end
 
   def to_s
-    Skill.stringify_skill("Disable Device", attribute, ac_penalty?)
+    PfrpgSkills::Skill.stringify_skill("Disable Device", attribute, ac_penalty?)
   end
 end
 

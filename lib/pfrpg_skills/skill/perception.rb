@@ -16,7 +16,7 @@ class PfrpgSkills::Skill::Perception
   end
 
   def to_s
-    Skill.stringify_skill("Perception", attribute, ac_penalty?)
+    PfrpgSkills::Skill.stringify_skill("Perception", attribute, ac_penalty?)
   end
 end
 

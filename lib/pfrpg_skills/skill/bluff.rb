@@ -16,6 +16,6 @@ class PfrpgSkills::Skill::Bluff
   end
 
   def to_s
-    Skill.stringify_skill("Bluff", attribute, ac_penalty?)
+    PfrpgSkills::Skill.stringify_skill("Bluff", attribute, ac_penalty?)
   end
 end

@@ -16,7 +16,7 @@ class PfrpgSkills::Skill::UseMagicDevice
   end
 
   def to_s
-    Skill.stringify_skill("Use Magic Device", attribute, ac_penalty?)
+    PfrpgSkills::Skill.stringify_skill("Use Magic Device", attribute, ac_penalty?)
   end
 end
 

@@ -16,6 +16,6 @@ class PfrpgSkills::Skill::Heal
   end
 
   def to_s
-    Skill.stringify_skill("Heal", attribute, ac_penalty?)
+    PfrpgSkills::Skill.stringify_skill("Heal", attribute, ac_penalty?)
   end
 end

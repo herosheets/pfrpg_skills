@@ -16,7 +16,7 @@ class PfrpgSkills::Skill::Spellcraft
   end
 
   def to_s
-    Skill.stringify_skill("Spellcraft", attribute, ac_penalty?)
+    PfrpgSkills::Skill.stringify_skill("Spellcraft", attribute, ac_penalty?)
   end
 end
 

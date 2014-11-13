@@ -25,7 +25,7 @@ class PfrpgSkills::Skill::Perform
   end
 
   def to_s
-    Skill.stringify_skill("Perform - #{@subject}", attribute, ac_penalty?)
+    PfrpgSkills::Skill.stringify_skill("Perform - #{@subject}", attribute, ac_penalty?)
   end
 
   def supported_types

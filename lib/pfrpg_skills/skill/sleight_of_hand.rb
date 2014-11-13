@@ -16,7 +16,7 @@ class PfrpgSkills::Skill::SleightOfHand
   end
 
   def to_s
-    Skill.stringify_skill("Sleight of Hand", attribute, ac_penalty?)
+    PfrpgSkills::Skill.stringify_skill("Sleight of Hand", attribute, ac_penalty?)
   end
 end
 

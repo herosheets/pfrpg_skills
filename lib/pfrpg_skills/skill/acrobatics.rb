@@ -12,6 +12,6 @@ class PfrpgSkills::Skill::Acrobatics
   end
 
   def to_s
-    Skill.stringify_skill("Acrobatics", attribute, ac_penalty?)
+    PfrpgSkills::Skill.stringify_skill("Acrobatics", attribute, ac_penalty?)
   end
 end

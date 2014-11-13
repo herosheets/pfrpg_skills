@@ -16,7 +16,7 @@ class PfrpgSkills::Skill::HandleAnimal
   end
 
   def to_s
-    Skill.stringify_skill("Handle Animal", attribute, ac_penalty?)
+    PfrpgSkills::Skill.stringify_skill("Handle Animal", attribute, ac_penalty?)
   end
 end
 

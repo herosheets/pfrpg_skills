@@ -16,7 +16,7 @@ class PfrpgSkills::Skill::Linguistics
   end
 
   def to_s
-    Skill.stringify_skill("Linguistics", attribute, ac_penalty?)
+    PfrpgSkills::Skill.stringify_skill("Linguistics", attribute, ac_penalty?)
   end
 end
 

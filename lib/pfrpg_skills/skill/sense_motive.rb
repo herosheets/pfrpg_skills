@@ -16,7 +16,7 @@ class PfrpgSkills::Skill::SenseMotive
   end
 
   def to_s
-    Skill.stringify_skill("Sense Motive", attribute, ac_penalty?)
+    PfrpgSkills::Skill.stringify_skill("Sense Motive", attribute, ac_penalty?)
   end
 end
 

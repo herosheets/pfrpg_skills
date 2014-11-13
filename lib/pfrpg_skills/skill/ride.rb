@@ -16,7 +16,7 @@ class PfrpgSkills::Skill::Ride
   end
 
   def to_s
-    Skill.stringify_skill("Ride", attribute, ac_penalty?)
+    PfrpgSkills::Skill.stringify_skill("Ride", attribute, ac_penalty?)
   end
 end
 

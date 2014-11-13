@@ -16,6 +16,6 @@ class PfrpgSkills::Skill::Climb
   end
 
   def to_s
-    Skill.stringify_skill("Climb", attribute, ac_penalty?)
+    PfrpgSkills::Skill.stringify_skill("Climb", attribute, ac_penalty?)
   end
 end

@@ -24,7 +24,7 @@ class PfrpgSkills::Skill::Profession
   end
 
   def to_s
-    Skill.stringify_skill("Profession - #{@subject}", attribute, ac_penalty?)
+    PfrpgSkills::Skill.stringify_skill("Profession - #{@subject}", attribute, ac_penalty?)
   end
 
   def supported_types

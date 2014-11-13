@@ -16,7 +16,7 @@ class PfrpgSkills::Skill::Fly
   end
 
   def to_s
-    Skill.stringify_skill("Fly", attribute, ac_penalty?)
+    PfrpgSkills::Skill.stringify_skill("Fly", attribute, ac_penalty?)
   end
 end
 

@@ -16,7 +16,7 @@ class PfrpgSkills::Skill::Swim
   end
 
   def to_s
-    Skill.stringify_skill("Swim", attribute, ac_penalty?)
+    PfrpgSkills::Skill.stringify_skill("Swim", attribute, ac_penalty?)
   end
 end
 

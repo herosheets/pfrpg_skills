@@ -16,7 +16,7 @@ class PfrpgSkills::Skill::Intimidate
   end
 
   def to_s
-    Skill.stringify_skill("Intimidate", attribute, ac_penalty?)
+    PfrpgSkills::Skill.stringify_skill("Intimidate", attribute, ac_penalty?)
   end
 end
 

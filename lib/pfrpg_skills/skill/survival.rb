@@ -16,7 +16,7 @@ class PfrpgSkills::Skill::Survival
   end
 
   def to_s
-    Skill.stringify_skill("Survival", attribute, ac_penalty?)
+    PfrpgSkills::Skill.stringify_skill("Survival", attribute, ac_penalty?)
   end
 end
 

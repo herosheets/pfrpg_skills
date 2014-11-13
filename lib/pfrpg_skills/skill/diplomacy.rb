@@ -16,7 +16,7 @@ class PfrpgSkills::Skill::Diplomacy
   end
 
   def to_s
-    Skill.stringify_skill("Diplomacy", attribute, ac_penalty?)
+    PfrpgSkills::Skill.stringify_skill("Diplomacy", attribute, ac_penalty?)
   end
 end
 

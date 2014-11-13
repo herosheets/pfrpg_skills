@@ -86,11 +86,11 @@ module PfrpgSkills
     end
 
     def self.class_from_name_with_type(name)
-      "Skill::#{name.split(':')[0].gsub(/\s+/, "").camelize}"
+      "PfrpgSkills::Skill::#{name.split(':')[0].gsub(/\s+/, "").camelize}"
     end
 
     def self.class_from_name(name)
-      "Skill::#{name.gsub(/\s+/, "").camelize}"
+      "PfrpgSkills::Skill::#{name.gsub(/\s+/, "").camelize}"
     end
 
   end

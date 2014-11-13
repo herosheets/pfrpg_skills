@@ -25,7 +25,7 @@ class PfrpgSkills::Skill::Knowledge
   end
 
   def to_s
-    Skill.stringify_skill("Knowledge - #{@subject}", attribute, ac_penalty?)
+    PfrpgSkills::Skill.stringify_skill("Knowledge - #{@subject}", attribute, ac_penalty?)
   end
 
   def supported_types

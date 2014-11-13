@@ -16,7 +16,7 @@ class PfrpgSkills::Skill::EscapeArtist
   end
 
   def to_s
-    Skill.stringify_skill("Escape Artist", attribute, ac_penalty?)
+    PfrpgSkills::Skill.stringify_skill("Escape Artist", attribute, ac_penalty?)
   end
 end
 
