@@ -60,7 +60,8 @@ module PfrpgSkills
       begin
         type = type_from_name(name)
         classname = class_from_name_with_type(name)
-        skill = classname.constantize.new(type)
+        skill = self.constantize(classname).new(type)
+
         return skill if skill.supported_types.include?(type)
       rescue NameError => e
       end
@@ -70,7 +71,7 @@ module PfrpgSkills
     def self.typeless_class(name)
       begin
         classname = class_from_name(name)
-        skill = classname.constantize.new
+        skill = self.constantize(classname).new
         return skill
       rescue NameError => e
       end
@@ -86,11 +87,44 @@ module PfrpgSkills
     end
 
     def self.class_from_name_with_type(name)
-      "PfrpgSkills::Skill::#{name.split(':')[0].gsub(/\s+/, "").camelize}"
+      "PfrpgSkills::Skill::#{self.camelize(name.split(':')[0].gsub(/\s+/, ""))}"
     end
 
     def self.class_from_name(name)
-      "PfrpgSkills::Skill::#{name.gsub(/\s+/, "").camelize}"
+      "PfrpgSkills::Skill::#{self.camelize(name.gsub(/\s+/, ""))}"
+    end
+
+    # By default, +camelize+ converts strings to UpperCamelCase. If the argument
+    # to +camelize+ is set to <tt>:lower</tt> then +camelize+ produces
+    # lowerCamelCase.
+    #
+    # +camelize+ will also convert '/' to '::' which is useful for converting
+    # paths to namespaces.
+    #
+    #   'active_model'.camelize                # => "ActiveModel"
+    #   'active_model'.camelize(:lower)        # => "activeModel"
+    #   'active_model/errors'.camelize         # => "ActiveModel::Errors"
+    #   'active_model/errors'.camelize(:lower) # => "activeModel::Errors"
+    #
+    # As a rule of thumb you can think of +camelize+ as the inverse of
+    # +underscore+, though there are cases where that does not hold:
+    #
+    #   'SSLError'.underscore.camelize # => "SslError"
+    def self.camelize(term, uppercase_first_letter = true)
+      string = term.to_s
+      string = string.sub(/^[a-z\d]*/) { $&.capitalize }
+      string.gsub(/(?:_|(\/))([a-z\d]*)/i) { "#{$1}#{$2.capitalize}" }.gsub('/', '::')
+    end
+
+    def self.constantize(term) #:nodoc:
+      names = term.split('::')
+      names.shift if names.empty? || names.first.empty?
+
+      constant = Object
+      names.each do |name|
+        constant = constant.const_defined?(name, false) ? constant.const_get(name) : constant.const_missing(name)
+      end
+      constant
     end
 
   end
